@@ -1,16 +1,60 @@
-.imageContainer{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
 
+.imageContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; /* Add gap between images */
 }
-.images{
-    width: 90%;
-    height: auto;
-    overflow: hidden;
 
+.images {
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+  position: relative; /* Add position relative for hover effect */
 }
-img{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s; /* Add transition for hover effect */
+}
+
+.images:hover img {
+  transform: scale(1.1); /* Add hover effect to enlarge the image */
+}
+
+.genreNavbar {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  white-space: nowrap; /* Prevent genre items from wrapping */
+  scroll-behavior: smooth; /* Enable smooth scrolling for slideshow */
+  /* -webkit-overflow-scrolling: touch;
+  animation: slideshow 15s ; */
+}
+
+.genreNavItem {
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+.genreNavItem.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Slideshow Animation Keyframes */
+@keyframes slideshow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% - 10px)); /* Adjust the slide distance here */
+  }
 }
