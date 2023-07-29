@@ -39,7 +39,7 @@ const MovieList = () => {
     }
   };
 
-  const handleSearchFunction = async (searchValue) => {
+  const handleSearch = async (searchValue) => {
     setLoading(true);
     if (!searchValue.trim()) {
       fetchMovies(selectedGenre); // Pass the selected genre to fetchMovies
@@ -78,7 +78,7 @@ const MovieList = () => {
 
   return (
     <div>
-      <SearchBar onSearch={handleSearchFunction} />
+      <SearchBar onSearch={handleSearch} />
       
       <div className="genreNavbar">
         {limitedGenres.map((genre) => (
